@@ -29,11 +29,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   				href:'main.jsp',
   				closable:false
   			});
-  			$('.easyui-tree'.tree({
+  			$('.easyui-tree').tree({
   				onClick:function(node){
-  					
-  				}
-  			}));
+  		        	if (node.attributes.url != '' && node.attributes.url != null)
+  		            {
+  		                if ($('.easyui-tabs').tabs('exists', node.text))
+  		                {
+  		                    $('.easyui-tabs').tabs('select', node.text);
+  		                }
+  		                else
+  		                {
+  		                    $('.easyui-tabs').tabs('add',{   
+  		                        title:node.text,   
+  		                        href:node.attributes.url,   
+  		                        closable:true  
+  		                    });
+  		                }
+  		            }
+  		        }
+  			});
   		});
   	</script>
   

@@ -16,6 +16,7 @@
     <typeAliases>
     	<typeAlias type="yao.homebank.entity.Menu" alias="Menu" />
     	<typeAlias type="yao.homebank.entity.User" alias="User"/>
+    	<typeAlias type="yao.homebank.entity.DataDict" alias="DataDict"/>
     </typeAliases>
     <!-- 
     <plugins>
