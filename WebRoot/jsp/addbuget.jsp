@@ -6,13 +6,14 @@
             + request.getServerName() + ":" + request.getServerPort()
             + path ;
 %>
+
 <script>
 $(function(){
 	
 });
 function submit(){
 	$('#myform').form('submit', {
-        url : '<%=basePath%>/commonController/addDatadictData.do',
+        url : '<%=basePath%>/bugetController/addBuget.do',
         onSubmit : function() {
             
             if ($(this).form("validate")) {
@@ -30,7 +31,7 @@ function submit(){
         		$.messager.alert('添加失败',temp.msg,'Info');
         	}
         	$('#window').window('close');
-        	$('#dg').datagrid('load');
+        	$('#datagrid_buget').datagrid('load');
         }
     });
 }
@@ -39,38 +40,32 @@ function cancel() {
     $('#window').window('close');
 }	
 </script>
-<div>
+<div id="main">
     <form id="myform" method="post">
         <table align="center">
             <tr>
                 <td>
-                <label>选择类别:</label>
+                <label>月份:</label>
                 </td>
                 <td>
-                <input class="easyui-combobox" id = "catalog" name="catalog" 
-		        data-options="required:true,
-		            valueField:'code',
+                <input class="easyui-validatebox" id = "month" name="month" 
+		        style="width: 190px;" data-options="required:true" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <label>预算金额:</label>
+                </td>
+                <td>
+                <input class="easyui-validatebox" type="text" id="value" name="value" 
+                    style="width: 190px;" data-options="required:true">
+                <input class="easyui-combobox" id = "unit" name="unit" 
+                data-options="required:true,
+                    valueField:'code',
                     textField:'codename',
-		            url:'<%=basePath%>/commonController/listDatadictCata.do?catalog=root'
-		        " />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                <label>代码:</label>
-                </td>
-                <td>
-                <input class="easyui-validatebox" type="text" id="code" name="code" 
-                    style="width: 290px;" data-options="required:true">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                <label>中文名称:</label>
-                </td>
-                <td>
-                <input class="easyui-validatebox" type="text" id="codename" name="codename"
-                    style="width: 290px;" data-options="required:true">
+                    width:80,
+                    url:'<%=basePath%>/commonController/listDatadictCata.do?catalog=currency'
+                " />
                 </td>
             </tr>
         </table>

@@ -53,7 +53,7 @@ function cancel() {
 				data-options="required:true,
 		            valueField:'code',
                     textField:'codename',
-		            url:'<%=basePath%>/commonController/listDatadictCata.do?catalog=type',
+		            url:'<%=basePath%>/commonController/listDatadictCata.do?catalog=root',
 		        	onLoadSuccess:function(){
 		        		$('#catalog').combobox('setValue','${entity.catalog}');
 		        	}

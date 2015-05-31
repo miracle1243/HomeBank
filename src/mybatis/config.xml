@@ -17,14 +17,17 @@
     	<typeAlias type="yao.homebank.entity.Menu" alias="Menu" />
     	<typeAlias type="yao.homebank.entity.User" alias="User"/>
     	<typeAlias type="yao.homebank.entity.DataDict" alias="DataDict"/>
+    	<typeAlias type="yao.homebank.entity.Payments" alias="Payments"/>
+    	<typeAlias type="yao.homebank.entity.Buget" alias="Buget"/>
+    	
     </typeAliases>
-    <!-- 
+     
     <plugins>
-		<plugin interceptor="yao.homebank.intercepter.PageIntercepter">
+		<plugin interceptor="yao.homebank.interceptor.PageInterceptor">
 			<property name="databaseType" value="mysql" />
 		</plugin>
 	</plugins>
-	 -->
+	
 </configuration>  
   
   
